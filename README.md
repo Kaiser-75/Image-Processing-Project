@@ -30,6 +30,8 @@ Designed an end-to-end algorithm that automatically detects rotation of a rectan
 ### **Course Acknowledgment**
 
 Course: ECE 5367 – Image Processing
+
 Instructor: **Dr. Hamed Sari-Sarraf**
+
 Whitacre College of Engineering, Texas Tech University
 
