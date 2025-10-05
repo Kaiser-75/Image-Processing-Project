@@ -8,7 +8,7 @@
 
 ### 🧩 **Repository Overview**
 
-This repository contains individual computer-vision projects completed for **ECE 5367 (Computer Vision)** at Texas Tech University.
+This repository contains individual computer-vision projects completed for **ECE 5367 (Image Processing)** at Texas Tech University.
 Each project focuses on classical vision techniques, emphasizing image analysis, geometric understanding, and algorithmic implementation without deep-learning frameworks.
 All projects are implemented and documented independently.
 
