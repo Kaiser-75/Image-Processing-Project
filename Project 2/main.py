@@ -153,6 +153,5 @@ class CardAlignCrop:
         return crop
 
 if __name__ == "__main__":
-    # path = input("Enter image path: ").strip()
-    path = "Testimage2.tif"
+    path = input("Enter image path: ").strip()
     CardAlignCrop().align_and_crop(path)
