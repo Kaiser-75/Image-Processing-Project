@@ -1,5 +1,5 @@
 
-## 📘 **ECE 5367 – Image Processing
+## 📘 ECE 5367 – Image Processing
 
 **Instructor:** Dr. Hamed Sari-Sarraf
 **Texas Tech University | Fall 2025**
