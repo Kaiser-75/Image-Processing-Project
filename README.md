@@ -26,12 +26,13 @@ Designed an end-to-end algorithm that automatically detects rotation of a rectan
 
 ---
 
+### **Project 3 – Frequency-Domain Illumination Correction**
 
-### **Course Acknowledgment**
+Implemented a Fourier-based image decomposition method to separate periodic surface patterns and illumination.  
+Used multi-lobe Butterworth band-pass filters to extract high-frequency texture and low-pass filters to estimate smooth illumination fields.  
+Output includes the periodic pattern, uniform illumination image, and frequency-domain visualization.
 
-Course: ECE 5367 – Image Processing
+---
 
-Instructor: **Dr. Hamed Sari-Sarraf**
 
-Whitacre College of Engineering, Texas Tech University
 
