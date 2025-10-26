@@ -9,6 +9,6 @@ The algorithm detects a playing card by locating its contour against a plain bac
 
 
 
-# Document link: [PDF File]([https://docs.opencv.org/](https://drive.google.com/file/d/17xpe8O7JdY2evqKMsyXgTrJEmiOorkPA/view?usp=drive_link))
+# Document link: [PDF File](https://drive.google.com/file/d/17xpe8O7JdY2evqKMsyXgTrJEmiOorkPA/view?usp=drive_link)
 
 
