@@ -113,14 +113,25 @@ class CardApp:
     def __init__(self):
         self.win = tk.Tk()
         self.win.title("Card Matcher")
-        tk.Button(self.win, text="Webcam", width=20,
-                  command=lambda: [self.win.withdraw(), WebcamApp().run(), self.win.deiconify()]).pack(padx=10, pady=10)
-        tk.Button(self.win, text="Choose Image", width=20,
-                  command=lambda: [self.win.withdraw(), ImageApp().run(), self.win.deiconify()]).pack(padx=10, pady=10)
+        self.win.geometry("600x400") 
+        self.win.configure(bg="#202020")  
+
+        title = tk.Label(self.win, text="Card Classifer", fg="white", bg="#202020",
+                         font=("Arial", 24, "bold"))
+        title.pack(pady=40)
+
+        tk.Button(self.win, text="Webcam Mode", width=25, height=2, font=("Arial", 14),
+                  command=lambda: [self.win.withdraw(), WebcamApp().run(), self.win.deiconify()]).pack(pady=20)
+
+        tk.Button(self.win, text="Choose Image", width=25, height=2, font=("Arial", 14),
+                  command=lambda: [self.win.withdraw(), ImageApp().run(), self.win.deiconify()]).pack(pady=10)
+
+        tk.Button(self.win, text="Exit", width=25, height=2, font=("Arial", 14),
+                  command=self.win.destroy).pack(pady=30)
 
     def run(self):
         self.win.mainloop()
 
+
 if __name__ == "__main__":
     CardApp().run()
-
