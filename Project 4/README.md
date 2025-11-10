@@ -5,6 +5,13 @@
 ## Algorithm Overview:
 The algorithm detects a playing card by locating its contour against a plain background and warping it to a fixed upright view. It then crops the top-left corner, where the rank and suit symbols appear. The cropped region is binarized using an adaptive threshold and split into two parts, one for rank and one for suit. Each part is cleaned, resized to a standard size, and compared to pre-made templates using normalized cross-correlation. The template with the highest similarity is selected as the card’s rank or suit. This process makes the system invariant to rotation, scale, and lighting.
 
+## Assumptions:
+1) Only one main card to process
+2) Good lighting, low motion blur
+3) Strong contrast between card and background
+4) Camera not extremely tilted
+5) The card covers about 60% of the frame.
+
 ## Directory Overview
 ```
 Project 4/
