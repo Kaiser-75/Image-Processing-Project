@@ -32,7 +32,7 @@ class CardMatcher:
 
     def _load_dir(self, path: Path) -> List[Template]:
         arr = []
-        for p in sorted(path.glob("*.png")):
+        for p in sorted(path.glob("*.jpg")):
             im = cv2.imread(str(p), cv2.IMREAD_GRAYSCALE)
             if im is None:
                 continue
