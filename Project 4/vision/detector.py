@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 CORNER_WIDTH = 32
-CORNER_HEIGHT = 84
+CORNER_HEIGHT = 92
 RANK_SIZE = (70, 125)
 SUIT_SIZE = (70, 100)
 
