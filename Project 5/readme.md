@@ -40,7 +40,7 @@ python denoise_classical.py
 
 python denoise_dncnn.py
 python denoise_swinir.py
-python denoise_ddpm.py   # optional
+python denoise_ddpm.py   
 
 ```
 
