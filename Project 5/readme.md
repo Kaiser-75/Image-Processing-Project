@@ -102,5 +102,5 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022.
 
 ```
-::contentReference[oaicite:0]{index=0}
+
 ```
