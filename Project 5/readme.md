@@ -101,6 +101,3 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
 "Restormer: Efficient Transformer for High Resolution Image Restoration,"
 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022.
 
-```
-
-```
