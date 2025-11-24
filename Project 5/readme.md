@@ -1,4 +1,3 @@
-````markdown
 ## Image Denoising Project
 
 This project compares classical filtering and modern deep learning models on grayscale images.
