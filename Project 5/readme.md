@@ -43,7 +43,10 @@ This setup gives you:
 - A small but diverse testbed to visualize failures and strengths of each method.
 
 ## Workflow
-
+0. **Require library**
+```bash
+pip install -r requirements.txt
+````
 1. **Preprocess images**
 ```bash
 python preprocessing.py
