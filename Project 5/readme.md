@@ -11,7 +11,7 @@ This project compares classical and deep learning denoising methods on grayscale
 ## Deep Learning
 - DnCNN  
 - SwinIR  
-- Diffusion model (optional)  
+- Diffusion model 
 
 ## Workflow
 1. Preprocess images  
