@@ -4,3 +4,4 @@ scipy
 torch
 torchvision
 tqdm
+opencv-python-headless>=4.8
