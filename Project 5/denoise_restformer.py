@@ -10,15 +10,21 @@ from basicsr.models.archs.restormer_arch import Restormer
 from metrics import mse_np, psnr_np, ssim_np
 
 
+
 BASE = "assets"
 NOISE_DIR = os.path.join(BASE, "noise")
 OUT_IMG = os.path.join(BASE, "output_restormer")
 OUT_JSON = os.path.join(BASE, "metrics")
 
-WEIGHT_PATH = "assets/weights/gaussian_gray_denoising_sigma50.pth"
+WEIGHT_PATH = os.path.join(BASE, "weights", "gaussian_gray_denoising_blind.pth")
+
 os.makedirs(OUT_IMG, exist_ok=True)
 os.makedirs(OUT_JSON, exist_ok=True)
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
+
+
+print("Loading Restormer BLIND grayscale model...")
 
 model = Restormer(
     inp_channels=1,
@@ -40,15 +46,17 @@ model.load_state_dict(state, strict=True)
 model = model.to(device)
 model.eval()
 
-print("Restormer loaded.")
+print("Restormer BLIND loaded.")
 
-def denoise_restormer(img_np: np.ndarray) -> np.ndarray:
+
+
+def denoise_restormer_blind(img_np: np.ndarray) -> np.ndarray:
     """
     img_np: H x W, uint8 grayscale
     returns: H x W, uint8 grayscale
     """
-    img = img_np.astype(np.float32) / 255.0          
-    img = img[None, None, :, :]                      
+    img = img_np.astype(np.float32) / 255.0        # [0,1]
+    img = img[None, None, :, :]                    # [1,1,H,W]
 
     x = torch.from_numpy(img).to(device)
 
@@ -66,8 +74,9 @@ def denoise_restormer(img_np: np.ndarray) -> np.ndarray:
         out = model(x_pad)
         out = out[:, :, :h, :w]
 
-    out = out.squeeze().cpu().clamp(0, 1).numpy()    
+    out = out.squeeze().cpu().clamp(0, 1).numpy()
     return (out * 255.0).astype(np.uint8)
+
 
 
 for fname in os.listdir(NOISE_DIR):
@@ -90,14 +99,17 @@ for fname in os.listdir(NOISE_DIR):
         continue
 
     t0 = time.time()
-    out = denoise_restormer(noisy_np)
+    out = denoise_restormer_blind(noisy_np)
     runtime = (time.time() - t0) * 1000.0
 
-    Image.fromarray(out).save(os.path.join(OUT_IMG, "restormer_" + fname))
+    out_path = os.path.join(OUT_IMG, "restormer_blind_" + fname)
+    Image.fromarray(out).save(out_path)
+
 
     mse = mse_np(clean_np, out)
     psnr = psnr_np(clean_np, out)
     ssim = ssim_np(clean_np, out)
+
 
     noise_key = (
         fname.replace(base + "_", "")
@@ -116,7 +128,7 @@ for fname in os.listdir(NOISE_DIR):
     if noise_key not in data:
         data[noise_key] = {}
 
-    data[noise_key]["restormer_sigma50"] = {
+    data[noise_key]["restormer"] = {
         "mse": mse,
         "psnr": psnr,
         "ssim": ssim,
@@ -128,4 +140,4 @@ for fname in os.listdir(NOISE_DIR):
 
     print("Updated", json_name)
 
-print("Restormer complete.")
+print("Restormer BLIND denoising complete.")
