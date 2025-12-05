@@ -1,6 +1,10 @@
 ## Image Denoising Project
 
 This project compares classical filtering and modern deep learning models on grayscale images.
+## 📄 Presentation PDF
+
+[Download Presentation (PDF)](assets/Image_processing_Project-05.pdf)
+
 
 ## Methods
 
